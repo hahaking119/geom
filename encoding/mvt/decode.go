@@ -7,10 +7,11 @@ import (
 	"io/ioutil"
 
 	"github.com/arolek/p"
+	"github.com/golang/protobuf/proto"
+
 	"github.com/go-spatial/geom"
 	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
 	"github.com/go-spatial/geom/winding"
-	"github.com/golang/protobuf/proto"
 )
 
 // TileGeomCollection returns all geometries in a tile
@@ -76,9 +77,22 @@ func decodeLayer(pb *vectorTile.Tile_Layer, dst *Layer) error {
 	return nil
 }
 
-func decodeFeature(pb *vectorTile.Tile_Feature, dst *Feature) error {
+func decodeFeature(pb *vectorTile.Tile_Feature, keys []string, values []*vectorTile.Tile_Value, dst *Feature) error {
 	dst.ID = pb.Id
 	// TODO tag support
+	for i, _ := range pb.Tags {
+		if i%2 != 0 {
+			continue
+		}
+		ki, vi := pb.Tags[i], pb.Tags[i]
+		if ki < 0 || int(ki) > len(keys) {
+			continue
+		}
+		if vi < 0 || int(vi) > len(values) {
+			continue
+		}
+		dst.Tags[keys[ki]] = values[vi].String()
+	}
 	var err error
 	dst.Geometry, err = DecodeGeometry(*pb.Type, pb.Geometry)
 	return err
