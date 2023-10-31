@@ -1,4 +1,4 @@
-module github.com/hahaking119/geom
+module github.com/go-spatial/geom
 
 go 1.13
 
