@@ -10,23 +10,23 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom/planar/clip"
+	"github.com/hahaking119/geom/planar/clip"
 
-	"github.com/go-spatial/geom/cmp"
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom/cmp"
+	"github.com/hahaking119/geom/planar"
 
-	"github.com/go-spatial/geom/planar/makevalid"
-	"github.com/go-spatial/geom/planar/makevalid/hitmap"
-	"github.com/go-spatial/geom/planar/makevalid/walker"
-	"github.com/go-spatial/geom/planar/simplify"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay"
+	"github.com/hahaking119/geom/planar/makevalid"
+	"github.com/hahaking119/geom/planar/makevalid/hitmap"
+	"github.com/hahaking119/geom/planar/makevalid/walker"
+	"github.com/hahaking119/geom/planar/simplify"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/mvt"
-	"github.com/go-spatial/geom/encoding/wkt"
-	"github.com/go-spatial/geom/slippy"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/mvt"
+	"github.com/hahaking119/geom/encoding/wkt"
+	"github.com/hahaking119/geom/slippy"
 )
 
 var simplifyGeo = flag.Bool("simplify", true, "simplify the wkt before running makevalid")

@@ -3,7 +3,7 @@ package triangulate
 import (
 	"context"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 type nodata struct{}

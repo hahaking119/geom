@@ -4,13 +4,13 @@ import (
 	"context"
 	"log"
 
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom/encoding/wkt"
+	"github.com/hahaking119/geom/encoding/wkt"
 
-	"github.com/go-spatial/geom"
-	cmppkg "github.com/go-spatial/geom/cmp"
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom"
+	cmppkg "github.com/hahaking119/geom/cmp"
+	"github.com/hahaking119/geom/planar"
 )
 
 func sortedEdge(pt1, pt2 [2]float64) [2][2]float64 {

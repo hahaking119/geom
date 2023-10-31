@@ -3,9 +3,9 @@ package mvt
 import (
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
 )
 
 func TestDecode(t *testing.T) {
@@ -36,7 +36,7 @@ func TestDecode(t *testing.T) {
 	}
 
 	// TODO(ear7h) error test cases/fuzzing
-	testcases := map[string]tcase {
+	testcases := map[string]tcase{
 		"point": {
 			typ: vectorTile.Tile_POINT,
 			buf: []uint32{9, 50, 34},

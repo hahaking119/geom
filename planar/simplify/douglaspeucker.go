@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom/planar"
 )
 
 type DouglasPeucker struct {
@@ -47,7 +47,6 @@ func (dp DouglasPeucker) simplify(ctx context.Context, depth uint8, linestring [
 		}
 		return append(ret, linestring...), nil
 	}
-
 
 	dmax, idx := 0.0, 0
 	dist := planar.PerpendicularDistance

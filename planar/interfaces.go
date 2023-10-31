@@ -3,7 +3,7 @@ package planar
 import (
 	"context"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // Label is the the label for the triangle. Is in "inside" or "outside".

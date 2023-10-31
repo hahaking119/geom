@@ -1,9 +1,10 @@
+//go:build gofuzz
 // +build gofuzz
 
 package fuzz
 
 import (
-	"github.com/go-spatial/geom/encoding/wkb"
+	"github.com/hahaking119/geom/encoding/wkb"
 )
 
 func Fuzz(data []byte) int {

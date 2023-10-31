@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/geojson"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/geojson"
 )
 
 func TestFeatureMarshalJSON(t *testing.T) {

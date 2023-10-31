@@ -6,8 +6,8 @@ import (
 	"math"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	gtesting "github.com/go-spatial/geom/testing"
+	"github.com/hahaking119/geom"
+	gtesting "github.com/hahaking119/geom/testing"
 )
 
 func TestEncode(t *testing.T) {

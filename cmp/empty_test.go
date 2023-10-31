@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 func TestIsEmptyGeo(t *testing.T) {

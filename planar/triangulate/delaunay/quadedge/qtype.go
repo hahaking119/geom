@@ -3,7 +3,7 @@ package quadedge
 import (
 	"fmt"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // QType describes the classification of a point to a line

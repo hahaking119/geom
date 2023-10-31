@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/internal/debugger"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/quadedge"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/internal/debugger"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/quadedge"
 )
 
 func init() {

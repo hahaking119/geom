@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package main
@@ -6,8 +7,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/gpkg"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/gpkg"
 )
 
 const (

@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/go-spatial/geom/slippy"
+	"github.com/hahaking119/geom/slippy"
 )
 
 func TestNewTile(t *testing.T) {

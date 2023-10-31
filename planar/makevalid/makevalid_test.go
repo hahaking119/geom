@@ -7,13 +7,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom/encoding/wkt"
-	"github.com/go-spatial/geom/internal/test/must"
-	"github.com/go-spatial/geom/slippy"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/encoding/wkt"
+	"github.com/hahaking119/geom/internal/test/must"
+	"github.com/hahaking119/geom/slippy"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar/makevalid/hitmap"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar/makevalid/hitmap"
 )
 
 var runAll bool

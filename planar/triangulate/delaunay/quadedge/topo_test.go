@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/winding"
 )
 
 func testEachSoloSym(e *Edge, dests ...geom.Point) (errs []error) {

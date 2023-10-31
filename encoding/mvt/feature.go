@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-spatial/geom"
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
-	"github.com/go-spatial/geom/encoding/wkt"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
+	"github.com/hahaking119/geom/encoding/wkt"
+	"github.com/hahaking119/geom/winding"
 )
 
 var (
@@ -106,12 +106,12 @@ func NewCommand(cmd uint32, count int) Command {
 	return Command((cmd & 0x7) | (uint32(count) << 3))
 }
 
-//ID encodes the ID of the command
+// ID encodes the ID of the command
 func (c Command) ID() uint32 {
 	return uint32(c) & 0x7
 }
 
-//Count encode the count of elements in the command
+// Count encode the count of elements in the command
 func (c Command) Count() int {
 	return int(uint32(c) >> 3)
 }

@@ -1,7 +1,7 @@
 package makevalid
 
 import (
-	pkg "github.com/go-spatial/geom/cmp"
+	pkg "github.com/hahaking119/geom/cmp"
 )
 
 var cmp = pkg.HiCMP

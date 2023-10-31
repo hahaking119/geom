@@ -4,9 +4,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/subdivision"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/subdivision/internal/phenix"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/subdivision"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/subdivision/internal/phenix"
 )
 
 func checks(script string) func(pb *phenix.PointBag) []phenix.Check {

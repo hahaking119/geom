@@ -1,7 +1,7 @@
 package delaunay_test
 
 import (
-	"github.com/go-spatial/geom/planar/triangulate/delaunay"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay"
 )
 
 var packageTests = map[string]delaunay.Constrained{

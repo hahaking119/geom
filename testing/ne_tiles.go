@@ -2,7 +2,7 @@ package testing
 
 import (
 	"fmt"
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 var tilesWkt = []string{_ne_6_43_21, _ne_8_42_98}
@@ -12,11 +12,12 @@ var tilesCompiled []geom.Collection
 // generated with the utility https://github.com/ear7h/tile-dump. The
 // tiles must be compiled at runtime by calling the CompileTiles
 // function (see documentation for it) or this funciton will panic.
+//
 //	package my_test
 //
 //	import (
-//		gtesting "github.com/go-spatial/testing"
-//		"github.com/go-spatial/geom/encoding/wkt"
+//		gtesting "github.com/hahaking119/testing"
+//		"github.com/hahaking119/geom/encoding/wkt"
 //	)
 //
 //	func init {
@@ -28,7 +29,6 @@ var tilesCompiled []geom.Collection
 //		tiles := gtesting.Tiles()
 //		...
 //	}
-//
 func Tiles() []geom.Collection {
 	if tilesCompiled == nil {
 		panic("no compiled tiles, make sure to call CompileTiles")
@@ -41,11 +41,12 @@ func Tiles() []geom.Collection {
 // through the Tiles function. It takes a WKT decoding function which can be
 // accessible in the package github.com/go-spatial/geom/encoding/wkt as the
 // function DecodeString.
+//
 //	package my_test
 //
 //	import (
-//		gtesting "github.com/go-spatial/testing"
-//		"github.com/go-spatial/geom/encoding/wkt"
+//		gtesting "github.com/hahaking119/testing"
+//		"github.com/hahaking119/geom/encoding/wkt"
 //	)
 //
 //	func init {
@@ -57,7 +58,6 @@ func Tiles() []geom.Collection {
 //		tiles := gtesting.Tiles()
 //		...
 //	}
-//
 func CompileTiles(wktDecoder func(string) (geom.Geometry, error)) {
 	if tilesCompiled != nil {
 		return

@@ -3,11 +3,11 @@ package mvt
 import (
 	"log"
 
-	"github.com/go-spatial/geom/cmp"
+	"github.com/hahaking119/geom/cmp"
 
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // PrepareGeo converts the geometry's coordinates to tile pixel coordinates. tile should be the

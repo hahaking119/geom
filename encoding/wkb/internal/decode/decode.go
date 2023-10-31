@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/wkb/internal/consts"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/wkb/internal/consts"
 )
 
 type ErrBadBOM byte

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	gtesting "github.com/go-spatial/geom/testing"
+	gtesting "github.com/hahaking119/geom/testing"
 )
 
 func init() {

@@ -7,7 +7,7 @@ import (
 
 	"context"
 
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
 )
 
 // Layer describes a layer within a tile.

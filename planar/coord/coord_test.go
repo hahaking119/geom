@@ -3,7 +3,7 @@ package coord
 import (
 	"testing"
 
-	"github.com/go-spatial/geom/cmp"
+	"github.com/hahaking119/geom/cmp"
 )
 
 func tolerance(tol *float64) (float64, int64) {

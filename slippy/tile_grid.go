@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // TileGrid contains the tile layout, including ability to get WGS84 coordinates for tile extents
@@ -40,7 +40,7 @@ func Extent(g Grid, t *Tile) (ext *geom.Extent, ok bool) {
 	if !ok {
 		return nil, false
 	}
-	br, ok := g.ToNative(NewTile(t.Z, t.X + 1, t.Y + 1))
+	br, ok := g.ToNative(NewTile(t.Z, t.X+1, t.Y+1))
 	if !ok {
 		return nil, false
 	}
@@ -51,23 +51,24 @@ func Extent(g Grid, t *Tile) (ext *geom.Extent, ok bool) {
 // NewGrid returns the grid conventionally used with the
 // given SRID. Errors if the SRID is not supported. The
 // currently supported SRID's are:
+//
 //	4326
 //	3857
 func NewGrid(srid uint) (Grid, error) {
 	switch srid {
 	case 4326:
 		return &grid{
-			srid: srid,
+			srid:        srid,
 			tilingRatio: 2,
-			maxx: LonMax,
-			maxy: LatMax,
+			maxx:        LonMax,
+			maxy:        LatMax,
 		}, nil
 	case 3857:
 		return &grid{
-			srid: srid,
+			srid:        srid,
 			tilingRatio: 1,
-			maxx: WebMercatorMax,
-			maxy: WebMercatorMax,
+			maxx:        WebMercatorMax,
+			maxy:        WebMercatorMax,
 		}, nil
 	default:
 		return nil, fmt.Errorf("unsupported srid: %v", srid)
@@ -99,7 +100,7 @@ func (g *grid) Size(zoom uint) (*Tile, bool) {
 	}
 
 	dim := uint(1) << zoom // hopefully the zoom isn't larger than 64
-	return NewTile(zoom, dim * uint(g.tilingRatio), dim), true
+	return NewTile(zoom, dim*uint(g.tilingRatio), dim), true
 }
 
 func (g *grid) FromNative(zoom uint, pt geom.Point) (*Tile, bool) {

@@ -11,8 +11,8 @@ besides endusring that compilation has already occured).
 package my_test
 
 import (
-    "github.com/go-spatial/geom/encoding/wkt"
-    gtesting "github.com/go-spatial/testing"
+    "github.com/hahaking119/geom/encoding/wkt"
+    gtesting "github.com/hahaking119/testing"
 )
 
 func init {

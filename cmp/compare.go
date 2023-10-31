@@ -4,7 +4,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // Compare holds the tolerances for the comparison functions

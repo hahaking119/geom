@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/gdey/errors"
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/winding"
 )
 
 const (
@@ -227,48 +227,49 @@ func resolveEdgeYDown(re *rEdge) {
 
 // ResolveEdge will find the edge such that dest lies between it and it's next edge.
 // It does this using the following table:
-//       ab -- orientation of a to b, (a being the edge of consideration)
-//       da -- orientation of destPoint and a
-//       db -- orientation of destPoint and b
-//       ⟲ -- counter-clockwise
-//       ⟳ -- clockwise
-//        O -- colinear
 //
-//        +----+----+----+----+
-//        |  # | ab | da | db | return - comment
-//        +----+----+----+----+                                           8
-//        |  1 | ⟲ | ⟲  | ⟲ | next                                   2  :  5
-//        |  2 | ⟲ | ⟲  | ⟳ | next                                .3....+----6->b
-//        |  3 | ⟲ | ⟲  | O  | next                                   1  |,,4,,,
-//        |  4 | ⟲ | ⟳  | ⟲ | a                                         7,,,,,,       ab =  ⟲ == next orientation
-//        |  5 | ⟲ | ⟳  | ⟳ | next                                      V
-//        |  6 | ⟲ | ⟳  | O | b -- ErrColinearPoints                     a
-//        |  7 | ⟲ | O   | ⟲ | a -- ErrColinearPoints
-//        |  8 | ⟲ | O   | ⟳ | next
-//        |  + | ⟲ | O   | O | point is at origin  : Err          ,,,,,,,14,,,,
-//        |  9 | ⟳ | ⟲  | ⟲ | a                                  ,,,,12,:,,13,
-//        | 10 | ⟳ | ⟲  | ⟳ | next                               .15....+----16>a
-//        | 11 | ⟳ | ⟲  | O | b -- ErrColinearPoints              ,,,,9,,|  10
-//        | 12 | ⟳ | ⟳  | ⟲ | a                                  ,,,,,,,11             ab = ⟳  == opposite of next orientation
-//        | 13 | ⟳ | ⟳  | ⟳ | a                                         V
-//        | 14 | ⟳ | ⟳  | O | a                                          b
-//        | 15 | ⟳ | O   | ⟲ | a
-//        | 16 | ⟳ | O   | ⟳ | a -- ErrColinearPoints
-//        |  + | ⟳ | O   | O | point is at origin : Err            ,,,,,,,18,,,,,
-//        | 17 | O  | ⟲  | ⟳ | next                              b-19----+---19->a
-//        | 18 | O  | ⟳  | ⟲ | a                                         17
-//        | 19 | O  | O   | O | a/b -- ErrColinearPoint a/b depending on which one contains dest
-//        | 20 | O  | ⟲  | ⟲ | a -- ErrCoincidentalEdges                 21
-//        | 21 | O  | ⟳  | ⟳ | a -- ErrCoincidentalEdges           .......+------>a,b
-//        +----+----+-----+----+                                          20
+//	ab -- orientation of a to b, (a being the edge of consideration)
+//	da -- orientation of destPoint and a
+//	db -- orientation of destPoint and b
+//	⟲ -- counter-clockwise
+//	⟳ -- clockwise
+//	 O -- colinear
 //
-//        if ab == O and da == O then db must be O
+//	 +----+----+----+----+
+//	 |  # | ab | da | db | return - comment
+//	 +----+----+----+----+                                           8
+//	 |  1 | ⟲ | ⟲  | ⟲ | next                                   2  :  5
+//	 |  2 | ⟲ | ⟲  | ⟳ | next                                .3....+----6->b
+//	 |  3 | ⟲ | ⟲  | O  | next                                   1  |,,4,,,
+//	 |  4 | ⟲ | ⟳  | ⟲ | a                                         7,,,,,,       ab =  ⟲ == next orientation
+//	 |  5 | ⟲ | ⟳  | ⟳ | next                                      V
+//	 |  6 | ⟲ | ⟳  | O | b -- ErrColinearPoints                     a
+//	 |  7 | ⟲ | O   | ⟲ | a -- ErrColinearPoints
+//	 |  8 | ⟲ | O   | ⟳ | next
+//	 |  + | ⟲ | O   | O | point is at origin  : Err          ,,,,,,,14,,,,
+//	 |  9 | ⟳ | ⟲  | ⟲ | a                                  ,,,,12,:,,13,
+//	 | 10 | ⟳ | ⟲  | ⟳ | next                               .15....+----16>a
+//	 | 11 | ⟳ | ⟲  | O | b -- ErrColinearPoints              ,,,,9,,|  10
+//	 | 12 | ⟳ | ⟳  | ⟲ | a                                  ,,,,,,,11             ab = ⟳  == opposite of next orientation
+//	 | 13 | ⟳ | ⟳  | ⟳ | a                                         V
+//	 | 14 | ⟳ | ⟳  | O | a                                          b
+//	 | 15 | ⟳ | O   | ⟲ | a
+//	 | 16 | ⟳ | O   | ⟳ | a -- ErrColinearPoints
+//	 |  + | ⟳ | O   | O | point is at origin : Err            ,,,,,,,18,,,,,
+//	 | 17 | O  | ⟲  | ⟳ | next                              b-19----+---19->a
+//	 | 18 | O  | ⟳  | ⟲ | a                                         17
+//	 | 19 | O  | O   | O | a/b -- ErrColinearPoint a/b depending on which one contains dest
+//	 | 20 | O  | ⟲  | ⟲ | a -- ErrCoincidentalEdges                 21
+//	 | 21 | O  | ⟳  | ⟳ | a -- ErrCoincidentalEdges           .......+------>a,b
+//	 +----+----+-----+----+                                          20
+//
+//	 if ab == O and da == O then db must be O
 //
 // Only errors returned are
-//  * nil  // nothing is wrong
-//  * ErrInvalidateEndVertex
-//  * ErrConcidentalEdges
-//  * geom.ErrColinearPoints
+//   - nil  // nothing is wrong
+//   - ErrInvalidateEndVertex
+//   - ErrConcidentalEdges
+//   - geom.ErrColinearPoints
 func ResolveEdge(order winding.Order, gse *Edge, odest geom.Point) (*Edge, error) {
 	if order.YPositiveDown {
 		return resolveEdge(order, gse, odest, resolveEdgeYDown)

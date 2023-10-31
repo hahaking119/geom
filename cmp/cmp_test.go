@@ -5,8 +5,8 @@ import (
 	"math"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	gtesting "github.com/go-spatial/geom/testing"
+	"github.com/hahaking119/geom"
+	gtesting "github.com/hahaking119/geom/testing"
 )
 
 /*
@@ -966,14 +966,14 @@ func TestFloat64(t *testing.T) {
 		"t 0 0": {
 			f1: 0.0,
 			f2: 0.0,
-			t: 0.01,
+			t:  0.01,
 			b:  bitTolerance2,
 			e:  true,
 		},
 		"t 0 -0": {
 			f1: 0.0,
 			f2: negativeZero,
-			t: 0.01,
+			t:  0.01,
 			b:  bitTolerance2,
 			e:  true,
 		},

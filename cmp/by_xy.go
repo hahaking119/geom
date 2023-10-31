@@ -1,6 +1,6 @@
 package cmp
 
-import "github.com/go-spatial/geom"
+import "github.com/hahaking119/geom"
 
 type ByXY [][2]float64
 

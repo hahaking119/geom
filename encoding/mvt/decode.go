@@ -9,9 +9,9 @@ import (
 	"github.com/arolek/p"
 	"github.com/golang/protobuf/proto"
 
-	"github.com/go-spatial/geom"
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
+	"github.com/hahaking119/geom/winding"
 )
 
 // TileGeomCollection returns all geometries in a tile

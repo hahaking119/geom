@@ -3,7 +3,7 @@ package kdtree
 import (
 	"encoding/json"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 /*

@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package subdivision
@@ -14,18 +15,18 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom/planar"
 
 	"github.com/gdey/errors"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/quadedge"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/quadedge"
 
-	"github.com/go-spatial/geom/encoding/gpkg"
-	"github.com/go-spatial/geom/encoding/wkt"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/subdivision/testingtables"
+	"github.com/hahaking119/geom/encoding/gpkg"
+	"github.com/hahaking119/geom/encoding/wkt"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/subdivision/testingtables"
 )
 
 const (

@@ -6,9 +6,9 @@ import (
 	"log"
 	"sort"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
+	"github.com/hahaking119/geom/planar"
 )
 
 // ErrStopIteration is used to stop the iteration.

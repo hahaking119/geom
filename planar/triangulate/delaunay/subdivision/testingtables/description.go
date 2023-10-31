@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package testingtables
@@ -6,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-spatial/geom/encoding/gpkg"
+	"github.com/hahaking119/geom/encoding/gpkg"
 )
 
 type Descriptioner interface {

@@ -3,8 +3,8 @@ package subdivision
 import (
 	"errors"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/quadedge"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/quadedge"
 )
 
 type Triangle struct {
@@ -36,15 +36,18 @@ func (t Triangle) IntersectsPoint(pt geom.Point) bool {
 }
 
 // OppositeVertex returns the vertex opposite to this triangle.
-//        +
-//       /|\
-//      / | \
-//     /  |  \
+//
+//	   +
+//	  /|\
+//	 / | \
+//	/  |  \
+//
 // v1 + a | b + v2
-//     \  |  /
-//      \ | /
-//       \|/
-//        +
+//
+//	\  |  /
+//	 \ | /
+//	  \|/
+//	   +
 //
 // If this method is called as a.opposedVertex(b), the result will be vertex v2.
 func (t Triangle) OppositeVertex(other Triangle) *geom.Point {
@@ -56,15 +59,18 @@ func (t Triangle) OppositeVertex(other Triangle) *geom.Point {
 }
 
 // OppositeTriangle returns the triangle opposite to the vertex v
-//        +
-//       /|\
-//      / | \
-//     /  |  \
+//
+//	   +
+//	  /|\
+//	 / | \
+//	/  |  \
+//
 // v1 + a | b +
-//     \  |  /
-//      \ | /
-//       \|/
-//        +
+//
+//	\  |  /
+//	 \ | /
+//	  \|/
+//	   +
 //
 // If this method is called on triangle a with v1 as the vertex, the result will be triangle b.
 func (t Triangle) OppositeTriangle(p geom.Point) (*Triangle, error) {
@@ -82,18 +88,17 @@ func (t Triangle) OppositeTriangle(p geom.Point) (*Triangle, error) {
 // SharedEdge returns the edge that is shared by both a and b. The edge is
 // returned with triangle a on the left.
 //
-//        + l
-//       /|\
-//      / | \
+//   - l
+//     /|\
+//     / | \
 //     /  |  \
-//    + a | b +
+//   - a | b +
 //     \  |  /
-//      \ | /
-//       \|/
-//        + r
+//     \ | /
+//     \|/
+//   - r
 //
 // If this method is called as a.sharedEdge(b), the result will be edge lr.
-//
 func (t Triangle) SharedEdge(other Triangle) *quadedge.Edge {
 	ae := t.StartingEdge()
 	be := other.StartingEdge()

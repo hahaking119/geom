@@ -1,6 +1,6 @@
 package quadedge
 
-import "github.com/go-spatial/geom"
+import "github.com/hahaking119/geom"
 
 // BuildEdgeGraphAroundPoint will build an edge and it's surounding point
 // as the points are listed. Points should be listed in counter-clockwise

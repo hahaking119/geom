@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-spatial/geom/encoding/wkb"
-	"github.com/go-spatial/geom/encoding/wkb/internal/tcase"
+	"github.com/hahaking119/geom/encoding/wkb"
+	"github.com/hahaking119/geom/encoding/wkb/internal/tcase"
 )
 
 func TestWKBDecode(t *testing.T) {

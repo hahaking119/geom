@@ -1,12 +1,13 @@
 // Generates corpus files from testdata
-// +build
+//go:build ignore
+// +build ignore
 
 package main
 
 import (
 	"github.com/dvyukov/go-fuzz/gen"
 
-	"github.com/go-spatial/geom/encoding/wkb/internal/tcase"
+	"github.com/hahaking119/geom/encoding/wkb/internal/tcase"
 )
 
 func main() {

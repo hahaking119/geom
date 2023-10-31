@@ -3,8 +3,8 @@ package planar
 import (
 	"sort"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
 )
 
 func NormalizeLines(lines []geom.Line) {

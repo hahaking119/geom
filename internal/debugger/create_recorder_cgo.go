@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package debugger
@@ -5,8 +6,8 @@ package debugger
 import (
 	"fmt"
 
-	rcdr "github.com/go-spatial/geom/internal/debugger/recorder"
-	"github.com/go-spatial/geom/internal/debugger/recorder/gpkg"
+	rcdr "github.com/hahaking119/geom/internal/debugger/recorder"
+	"github.com/hahaking119/geom/internal/debugger/recorder/gpkg"
 )
 
 func NewRecorder(dir, filename string) (rcdr.Interface, string, error) {

@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package gpkg
@@ -10,9 +11,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-spatial/geom/encoding/gpkg"
+	"github.com/hahaking119/geom/encoding/gpkg"
 
-	"github.com/go-spatial/geom/internal/debugger/recorder"
+	"github.com/hahaking119/geom/internal/debugger/recorder"
 )
 
 const (

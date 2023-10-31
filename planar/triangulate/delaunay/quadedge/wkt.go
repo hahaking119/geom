@@ -3,7 +3,7 @@ package quadedge
 import (
 	"log"
 
-	wktEncoder "github.com/go-spatial/geom/encoding/wkt"
+	wktEncoder "github.com/hahaking119/geom/encoding/wkt"
 )
 
 type logWriter int

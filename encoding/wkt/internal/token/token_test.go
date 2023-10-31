@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 func assertError(expErr, gotErr error) (msg, expected, got string, ok bool) {

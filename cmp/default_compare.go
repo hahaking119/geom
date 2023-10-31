@@ -3,7 +3,7 @@ package cmp
 import (
 	"sync/atomic"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // HiPrecision is a high precision for comparator

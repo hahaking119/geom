@@ -3,8 +3,8 @@ package pseudopolygon
 import (
 	"sort"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar"
 )
 
 type edgeMap map[geom.Line]bool

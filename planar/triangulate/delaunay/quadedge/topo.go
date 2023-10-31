@@ -3,11 +3,11 @@ package quadedge
 import (
 	"log"
 
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom/planar"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // Splice operator affects the two edge rings around the origin of a and b,

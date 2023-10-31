@@ -2,9 +2,11 @@ package slippy
 
 import (
 	"testing"
+
 	"github.com/go-spatial/proj"
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
+
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
 )
 
 func TestTileGridSize(t *testing.T) {
@@ -176,7 +178,7 @@ func TestFromNative(t *testing.T) {
 			}
 		}
 	}
-	
+
 	// expected = tile column, tile row
 	tests := map[string]tcase{
 		"3857_z0": {

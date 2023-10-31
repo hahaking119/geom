@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding"
 )
 
 var (
@@ -48,7 +48,6 @@ const (
 // If something other than the above is passed in the system will return a geom.ErrUnknownGeometry type.
 // Values in the property map are marshaled according to the type-dependent default encoding as defined
 // by the go's encoding/json package.
-//
 func Marshal(v interface{}) ([]byte, error) {
 	switch g := v.(type) {
 	case Feature:

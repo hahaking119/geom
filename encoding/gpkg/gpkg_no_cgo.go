@@ -5,7 +5,7 @@ import (
 	"math"
 
 	"github.com/gdey/errors"
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 var (

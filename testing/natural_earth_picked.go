@@ -3,7 +3,7 @@
 package testing
 
 import (
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // South Africa has a hole in it

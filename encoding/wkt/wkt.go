@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 func Encode(w io.Writer, geo geom.Geometry) error {

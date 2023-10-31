@@ -6,8 +6,8 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/go-spatial/geom/cmp"
-	"github.com/go-spatial/geom/planar/coord"
+	"github.com/hahaking119/geom/cmp"
+	"github.com/hahaking119/geom/planar/coord"
 )
 
 // datum is the ellipsoid Structure for various datums.

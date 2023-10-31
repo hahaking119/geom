@@ -5,10 +5,10 @@ import (
 	"log"
 	"strings"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar"
-	"github.com/go-spatial/geom/planar/triangulate/delaunay/quadedge"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar"
+	"github.com/hahaking119/geom/planar/triangulate/delaunay/quadedge"
+	"github.com/hahaking119/geom/winding"
 )
 
 // AsGeom returns a geom based Triangle

@@ -1,4 +1,4 @@
-//Package wkb is for decoding ESRI's Well Known Binary (WKB) format for OGC geometry (WKBGeometry)
+// Package wkb is for decoding ESRI's Well Known Binary (WKB) format for OGC geometry (WKBGeometry)
 // sepcification at http://edndoc.esri.com/arcsde/9.1/general_topics/wkb_representation.htm
 // There are a few types supported by the specification. Each general type is in it's own file.
 // So, to find the implementation of Point (and MultiPoint) it will be located in the point.go
@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/wkb/internal/consts"
-	"github.com/go-spatial/geom/encoding/wkb/internal/decode"
-	"github.com/go-spatial/geom/encoding/wkb/internal/encode"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/wkb/internal/consts"
+	"github.com/hahaking119/geom/encoding/wkb/internal/decode"
+	"github.com/hahaking119/geom/encoding/wkb/internal/encode"
 )
 
 type ErrUnknownGeometryType struct {
@@ -26,7 +26,8 @@ func (e ErrUnknownGeometryType) Error() string {
 	return fmt.Sprintf("Unknown Geometry Type %v", e.Typ)
 }
 
-//  geometry types
+//	geometry types
+//
 // http://edndoc.esri.com/arcsde/9.1/general_topics/wkb_representation.htm
 const (
 	Point           = consts.Point

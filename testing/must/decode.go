@@ -4,7 +4,7 @@ package must
 import (
 	"fmt"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // Decode will panic if err is not nil otherwise return the geometry

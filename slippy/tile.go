@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // MaxZoom is the lowest zoom (furthest in)
@@ -41,7 +41,6 @@ func NewTileMinMaxer(g Grid, ext geom.MinMaxer) (*Tile, bool) {
 	if !ok {
 		return nil, false
 	}
-
 
 	var ret *Tile
 

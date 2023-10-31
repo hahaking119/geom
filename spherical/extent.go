@@ -3,7 +3,7 @@ package spherical
 import (
 	"math"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // Hull returns the smallest region of a sphere taking into account the antimeridian.

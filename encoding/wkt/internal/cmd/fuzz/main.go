@@ -6,9 +6,9 @@ import (
 	"log"
 	"sync"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/wkt"
-	"github.com/go-spatial/geom/encoding/wkt/internal/cmd/fuzz/fuzz"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/wkt"
+	"github.com/hahaking119/geom/encoding/wkt/internal/cmd/fuzz/fuzz"
 )
 
 type panicReport struct {

@@ -8,11 +8,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom/internal/test/must"
-	"github.com/go-spatial/geom/winding"
+	"github.com/hahaking119/geom/internal/test/must"
+	"github.com/hahaking119/geom/winding"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/wkt"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/wkt"
 )
 
 var showanswer bool

@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package gpkg
@@ -9,12 +10,12 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/go-spatial/geom/cmp"
+	"github.com/hahaking119/geom/cmp"
 
 	"github.com/gdey/errors"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/encoding/wkb"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/wkb"
 )
 
 type EnvelopeType uint8

@@ -3,7 +3,7 @@ package testing
 import (
 	"math"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // BoxPolygon returns a polygon that is a box with side lengths of
@@ -25,7 +25,7 @@ func SinLineString(amp, start, end float64, points int) geom.LineString {
 		panic("cannot have a line with less than 2 points")
 	}
 
-	return FuncLineString(start, end, points, func (t float64) [2]float64 {
+	return FuncLineString(start, end, points, func(t float64) [2]float64 {
 		return [2]float64{t, amp * math.Sin(t)}
 	})
 }
@@ -44,12 +44,12 @@ func FuncLineString(start, end float64, points int, fn ParamFunc) geom.LineStrin
 	ret := make([][2]float64, points)
 	t := start
 
-	for i := 0; i < points - 1; i++ {
+	for i := 0; i < points-1; i++ {
 		ret[i] = fn(t)
 		t += res
 	}
 
-	ret[points - 1] = fn(end)
+	ret[points-1] = fn(end)
 
 	return ret
 }

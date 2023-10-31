@@ -3,7 +3,7 @@ package cmp
 import (
 	"math"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 var (

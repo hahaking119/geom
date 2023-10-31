@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom/internal/parsing"
+	"github.com/hahaking119/geom/internal/parsing"
 )
 
 func TestSymbol(t *testing.T) {

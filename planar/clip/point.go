@@ -3,7 +3,7 @@ package clip
 import (
 	"context"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 // MultiPoint will filter out points that are not contained by the clipbox.

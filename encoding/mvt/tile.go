@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
 )
 
 // Tile describes a Mapbox Vector Tile

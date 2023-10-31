@@ -4,7 +4,6 @@ Package utm provides the ability to work with UTM coordinates
 	References:
 		https://stevedutch.net/FieldMethods/UTMSystem.htm
 		https://gisgeography.com/central-meridian/
-
 */
 package utm
 
@@ -12,7 +11,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/go-spatial/geom/planar/coord"
+	"github.com/hahaking119/geom/planar/coord"
 )
 
 const (
@@ -60,11 +59,10 @@ func (zl ZoneLetter) IsValid() bool { return zl >= 'C' && zl <= 'X' && zl != 'O'
 // quick lookup table for central meridian for each zone
 // this can be calculated using the formula:
 //
-//      ⎧ 30 - zone if zone <= 30
-//    i ⎨ zone - 30 if zone > 30
-//      ⎩
-//    centralMeridianDegrees( zone ) = 3 + 6i
-//
+//	  ⎧ 30 - zone if zone <= 30
+//	i ⎨ zone - 30 if zone > 30
+//	  ⎩
+//	centralMeridianDegrees( zone ) = 3 + 6i
 var centralMeridianDegrees = []uint{
 	3, 9, 15, 21, 27, 33, 39, 45, 51, 57, 63, 69, 75, 81, 87, 93, 99, 105, 111, 117, 123, 129, 135, 141, 147, 153, 159, 165, 171, 177,
 }
@@ -72,7 +70,8 @@ var centralMeridianDegrees = []uint{
 // CentralMeridian returns the central meridian degree for the given zone.
 //
 // Possible errors:
-// 	ErrInvalidZone
+//
+//	ErrInvalidZone
 func CentralMeridian(zone Zone) (degree int, err error) {
 
 	if !zone.IsValid() {
@@ -223,7 +222,8 @@ func ZoneNumberFromLngLat(lnglat coord.LngLat) int {
 // ZoneLetterForLat returns the UTM zone letter for the given latitude value
 //
 // Possible errors:
-//	 ErrLatitudeOutOfRange
+//
+//	ErrLatitudeOutOfRange
 func ZoneLetterForLat(lat float64) (ZoneLetter, error) {
 	switch {
 	case 84 >= lat && lat >= 72:
@@ -294,7 +294,8 @@ func ZoneLetterForLat(lat float64) (ZoneLetter, error) {
 // NewZone returns the UTM zone for the given LngLat value.
 //
 // Possible errors:
-//	 ErrLatitudeOutOfRange
+//
+//	ErrLatitudeOutOfRange
 func NewZone(lnglat coord.LngLat) (Zone, error) {
 	number := ZoneNumberFromLngLat(lnglat)
 	letter, err := ZoneLetterForLat(lnglat.Lat)

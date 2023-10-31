@@ -4,7 +4,7 @@ import (
 	"container/heap"
 	"math"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 /*
@@ -111,13 +111,13 @@ fashion so retrieving the nearest point or the nearest handful should still be q
 
 Algorithm:
 
-* Initialize by calculating the distance from the source point to the root node and the root node's
-  bounding box. Push both these values onto their respective heaps (nodeHeap & bboxHeap)
-* While there is still data to return:
-	* If the distance on the top of the nodeHeap is < the distance on the top of bboxHeap we know
-	  that node is closer than all the remaining nodes and can be returned to the user.
-	* Otherwise, the node might not be closest, so pop of the next bounding box and push its
-	  children onto the nodeHeap.
+  - Initialize by calculating the distance from the source point to the root node and the root node's
+    bounding box. Push both these values onto their respective heaps (nodeHeap & bboxHeap)
+  - While there is still data to return:
+  - If the distance on the top of the nodeHeap is < the distance on the top of bboxHeap we know
+    that node is closer than all the remaining nodes and can be returned to the user.
+  - Otherwise, the node might not be closest, so pop of the next bounding box and push its
+    children onto the nodeHeap.
 
 The iterator design here was taken from: https://ewencp.org/blog/golang-iterators/index.html
 
@@ -129,7 +129,6 @@ To use this iterator:
 		n, d := nnit.Value()
 		// do stuff
 	}
-
 */
 func NewNearestNeighborIterator(p geom.Pointer, kdTree *KdTree, df DistanceFunc) *NearestNeighborIterator {
 	result := NearestNeighborIterator{

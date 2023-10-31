@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-spatial/geom"
 	"github.com/arolek/p"
-	"github.com/go-spatial/geom/encoding/mvt"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/encoding/mvt"
 )
 
 func TestLayerAddFeatures(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
 )
 
 func TestDecode(t *testing.T) {

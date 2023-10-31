@@ -1,3 +1,4 @@
+//go:build cgo
 // +build cgo
 
 package debugger_test
@@ -6,9 +7,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-spatial/geom/internal/debugger"
+	"github.com/hahaking119/geom/internal/debugger"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 func TestRecorder(t *testing.T) {

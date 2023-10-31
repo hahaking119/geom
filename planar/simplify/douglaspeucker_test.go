@@ -7,10 +7,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/cmp"
-	"github.com/go-spatial/geom/encoding/wkt"
-	gtesting "github.com/go-spatial/geom/testing"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/cmp"
+	"github.com/hahaking119/geom/encoding/wkt"
+	gtesting "github.com/hahaking119/geom/testing"
 )
 
 var ignoreSanityCheck bool

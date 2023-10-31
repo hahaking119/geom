@@ -4,7 +4,7 @@ package kdtree
 import (
 	"errors"
 
-	"github.com/go-spatial/geom"
+	"github.com/hahaking119/geom"
 )
 
 /*
@@ -12,12 +12,11 @@ KdTree is an index for 2 dimensional point data.
 
 Limitations:
 
-* Bulk inserts and balancing are not supported. If you have a large amount of data to insert it is
-  best to randomize the data before inserting.
-* Duplicate points are not supported and will return an error.
+  - Bulk inserts and balancing are not supported. If you have a large amount of data to insert it is
+    best to randomize the data before inserting.
+  - Duplicate points are not supported and will return an error.
 
 See the *_iterator.go files for how to query data out of the kd-tree.
-
 */
 type KdTree struct {
 	root *KdNode

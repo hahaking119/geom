@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	"github.com/go-spatial/geom/planar"
+	"github.com/hahaking119/geom"
+	"github.com/hahaking119/geom/planar"
 )
 
 func TestRingContains(t *testing.T) {

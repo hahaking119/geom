@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-spatial/geom"
-	vectorTile "github.com/go-spatial/geom/encoding/mvt/vector_tile"
+	"github.com/hahaking119/geom"
+	vectorTile "github.com/hahaking119/geom/encoding/mvt/vector_tile"
 )
 
 func TestLayer(t *testing.T) {
@@ -54,8 +54,8 @@ func TestLayer(t *testing.T) {
 	}
 
 	var (
-		noFeatures = "nofeatures"
-		oneFeature = "onefeature"
+		noFeatures  = "nofeatures"
+		oneFeature  = "onefeature"
 		twoFeatures = "twofeatures"
 	)
 
