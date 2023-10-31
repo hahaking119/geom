@@ -78,22 +78,18 @@ func decodeLayer(pb *vectorTile.Tile_Layer, dst *Layer) error {
 }
 
 func decodeFeature(pb *vectorTile.Tile_Feature, keys []string, values []*vectorTile.Tile_Value, dst *Feature) error {
+	var err error
 	dst.ID = pb.Id
-	// TODO tag support
-	for i, _ := range pb.Tags {
-		if i%2 != 0 {
-			continue
+	tagIndices := make(map[int]int)
+	for i := 0; i < len(pb.Tags); i += 2 {
+		ki, vi := pb.Tags[i], pb.Tags[i+1]
+		if ki >= 0 && int(ki) < len(keys) && vi >= 0 && int(vi) < len(values) {
+			tagIndices[int(ki)] = int(vi)
 		}
-		ki, vi := pb.Tags[i], pb.Tags[i]
-		if ki < 0 || int(ki) > len(keys) {
-			continue
-		}
-		if vi < 0 || int(vi) > len(values) {
-			continue
-		}
+	}
+	for ki, vi := range tagIndices {
 		dst.Tags[keys[ki]] = values[vi].String()
 	}
-	var err error
 	dst.Geometry, err = DecodeGeometry(*pb.Type, pb.Geometry)
 	return err
 }
