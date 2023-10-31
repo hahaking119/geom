@@ -6,9 +6,11 @@
 Package vectorTile is a generated protocol buffer package.
 
 It is generated from these files:
+
 	vector_tile.proto
 
 It has these top-level messages:
+
 	Tile
 */
 package vectorTile
@@ -121,6 +123,30 @@ var extRange_Tile_Value = []proto.ExtensionRange{
 
 func (*Tile_Value) ExtensionRangeArray() []proto.ExtensionRange {
 	return extRange_Tile_Value
+}
+
+func (m *Tile_Value) GetValue() interface{} {
+	if m == nil {
+		return nil
+	}
+	if m.StringValue != nil {
+		return *m.StringValue
+	} else if m.FloatValue != nil {
+		return *m.FloatValue
+	} else if m.DoubleValue != nil {
+		return *m.DoubleValue
+	} else if m.IntValue != nil {
+		return *m.IntValue
+	} else if m.UintValue != nil {
+		return *m.UintValue
+	} else if m.SintValue != nil {
+		return *m.SintValue
+	} else if m.BoolValue != nil {
+		return *m.BoolValue
+	} else if m.XXX_unrecognized != nil {
+		return m.XXX_unrecognized
+	}
+	return nil
 }
 
 func (m *Tile_Value) GetStringValue() string {

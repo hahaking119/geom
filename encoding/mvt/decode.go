@@ -87,8 +87,11 @@ func decodeFeature(pb *vectorTile.Tile_Feature, keys []string, values []*vectorT
 			tagIndices[int(ki)] = int(vi)
 		}
 	}
-	for ki, vi := range tagIndices {
-		dst.Tags[keys[ki]] = values[vi].String()
+	if len(tagIndices) > 0 {
+		dst.Tags = make(map[string]interface{}, len(tagIndices))
+		for ki, vi := range tagIndices {
+			dst.Tags[keys[ki]] = values[vi].GetValue()
+		}
 	}
 	dst.Geometry, err = DecodeGeometry(*pb.Type, pb.Geometry)
 	return err
