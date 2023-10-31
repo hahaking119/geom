@@ -1,6 +1,6 @@
 language: go
 # Does nothing when building on go-spatial/geom, but makes builds work cleanly on forks.
-go_import_path: github.com/go-spatial/geom
+go_import_path: github.com/hahaking119/geom
 
 git:
   depth: 1
