@@ -1,6 +1,9 @@
 package mvt
 
 import (
+	"fmt"
+	"os"
+	"strconv"
 	"testing"
 
 	"github.com/hahaking119/geom"
@@ -9,6 +12,43 @@ import (
 )
 
 func TestDecode(t *testing.T) {
+	//file := "/Users/bytedance/Downloads/tile(432016,197887,19).mvt"
+	//file = "/Users/bytedance/Downloads/tile(432016,197888,19).mvt"
+	//file = "/Users/bytedance/Downloads/tile(432017,197887,19).mvt"
+	//file = "/Users/bytedance/Downloads/tile(432017,197888,19).mvt"
+	files := []string{"/Users/bytedance/Downloads/tile(432016,197887,19).mvt",
+		"/Users/bytedance/Downloads/tile(432016,197888,19).mvt",
+		"/Users/bytedance/Downloads/tile(432017,197887,19).mvt",
+		"/Users/bytedance/Downloads/tile(432017,197888,19).mvt",
+		"/Users/bytedance/Downloads/tile(428737,202157,19).mvt",
+		"/Users/bytedance/Downloads/tile(428738,202156,19).mvt",
+		"/Users/bytedance/Downloads/tile(428738,202157,19).mvt",
+	}
+	for _, file := range files {
+		f, err := os.Open(file)
+		if err == nil {
+			ret, err := Decode(f)
+			if err == nil {
+				for _, layer := range ret.layers {
+					if layer.Name != "speeds" {
+						continue
+					}
+					for _, feature := range layer.features {
+						//if _, ok := feature.Tags["name"]; !ok {
+						//	continue
+						//}
+						//name := feature.Tags["name"].(string)
+						//fmt.Print(name)
+						//if !strings.Contains(name, "147024753") || !strings.Contains(name, "147019978") {
+						//	continue
+						//}
+						fmt.Println(strconv.FormatFloat(feature.Tags["weight"].(float64), 'f', 15, 64))
+					}
+				}
+			}
+		}
+	}
+
 	type tcase struct {
 		typ vectorTile.Tile_GeomType
 		buf []uint32
